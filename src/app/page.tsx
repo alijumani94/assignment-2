@@ -1,101 +1,114 @@
-import Image from "next/image";
+import {Montserrat} from "next/font/google";
+import Navbar from './components/navbar';
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+const montserrat= Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap"
+})
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+export default function page(){
+  return(
+        // the whole container which contains all containers
+    <div className="w-[1440px] h-[1132px] bg-[rgb(37,43,66)]">
+      <header>
+        <Navbar/>
+      </header>
+
+        {/* //Main body div, that contains the whole content except navbar */}
+        <div className="flex flex-col items-center w-[1046px] ml-[197px] py-20 gap-20">
+
+          {/* //body container */}
+          <div className="flex flex-col items-center text-center w-[699px] h-[496px] py-10 gap-10">
+
+            <h5 className={`${montserrat.className} font-bold text-base leading-6 tracking-[0.1px] text-[#23A6F0]`}>
+              Welcome
+              </h5>
+
+              <h1 className= {`${montserrat.className} w-[552px] h-[160px] mx-auto text-center text-white font-bold text-[58px] leading-[80px] tracking-[0.2px]`}>
+              Selling on the internet like a pro   
+              </h1>
+
+              <h4 className={`${montserrat.className} w-[536px] h-[60px] mx-auto font-normal text-[20px] text-white leading-[30px] tracking-[0.2px]`}>
+              We know how large objects will act, but things on a 
+              small scale just do not act that way.
+              </h4>
+
+              {/*span container for two small buttons in body after text */}
+              <span className='flex w-[365px] h-[52px] mx-auto gap-[10px]'>
+
+                <button className={`${montserrat.className} w-[220px] h-[52px] py-[15px] px-10 font-bold rounded-[5px] text-[14px] leading-[22px] tracking-[0.2px] bg-[#23A6F0] text-white`}>
+                  Get Quote Now
+                </button>
+
+                <button className={`${montserrat.className} w-[193px] h-[52px] rounded-[5px] font-bold text-[14px] leading-[22px] tracking-[0.2px] border-[1px] border-[#23A6F0] text-white`}>
+                Learn More
+                </button>
+
+              </span>
+
+              {/* div container for last three white boxes */}
+              <div className='flex justify-center w-[1046px] h-[292px] my-28 gap-[30px] '>
+                
+                {/* div1 */}
+                <div className='flex flex-col w-[328px] h-[292px] py-[35px] px-10 gap-5 bg-white shadow-custom'>
+                  <div className="w-[70px] h-[76px] rounded-[10px] py-[22px] px-[19px] gap-[10px] bg-[#FFDCD1] ">
+
+                  </div>
+                  <h5 className={`${montserrat.className} w-40 h-6 font-bold text-left text-base leading-6 tracking-[0.1px] text-[#252B42]`}>
+                    training Courses
+                  </h5>
+
+                  <div className="w-[50px] h-[2px] bg-[#E74040]"></div>
+
+                  <p className={`${montserrat.className} w-[222px] h-[60px] text-left font-normal text-sm leading-5 tracking-[0.2px] text-[#737373]`}>
+                The gradual accumulation of 
+                information about atomic and 
+                small-scale behaviour...
+                </p>
+                </div>
+
+                {/* div2 */}
+                <div className='flex flex-col w-[329px] h-[292px] py-[35px] px-10 gap-5 bg-white shadow-custom'>
+                <div className="w-[70px] h-[76px] rounded-[10px] py-[22px] px-[19px] gap-[10px] bg-[#B9EAA8] ">
+                  </div>
+
+                <h5 className={`${montserrat.className} w-48 h-6 font-bold text-left text-base leading-6 tracking-[0.1px] text-[#252B42]`}>
+                2,769 online courses
+                  </h5>
+
+                  <div className="w-[50px] h-[2px] bg-[#E74040]"></div>
+
+                  <p className={`${montserrat.className} w-[222px] h-[60px] text-left font-normal text-sm leading-5 tracking-[0.2px] text-[#737373]`}>
+                The gradual accumulation of 
+                information about atomic and 
+                small-scale behaviour...
+                </p>
+                
+               </div>
+
+               {/* div3 */}
+               <div className='flex flex-col w-[329px] h-[292px] py-[35px] px-10 gap-5 bg-[#23A6F0] shadow-custom'>
+               <div className="w-[70px] h-[76px] rounded-[10px] py-[22px] px-[19px] gap-[10px] bg-white ">
+                </div>
+
+               <h5 className={`${montserrat.className} w-40 h-6 font-bold text-left text-base leading-6 tracking-[0.1px] text-white`}>
+                    training Courses
+                  </h5>
+
+                  <div className="w-[50px] h-[2px] bg-white"></div>
+
+                  <p className={`${montserrat.className} w-[222px] h-[60px] text-left font-normal text-sm leading-5 tracking-[0.2px] text-white`}>
+                The gradual accumulation of 
+                information about atomic and 
+                small-scale behaviour...
+                </p>
+               
+              </div>
+              </div>
+
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        </div>
+      )
 }

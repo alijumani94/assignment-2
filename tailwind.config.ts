@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom': '0px 13px 19px rgba(0, 0, 0, 1)', // x: 0, y: 13, blur: 19, color: black
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
